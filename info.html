@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Info</title>
+    <link rel="stylesheet" href="info.css">
+</head>
+<body>
+    <div class="info-container">
+        <h1 id="memberName">Member Name</h1>
+        <img id="memberPhoto" src="" alt="Member Image">
+        <p id="memberBio">Loading member bio...</p>
+        <a href="home.html" class="back-link">← Back to Home</a>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const member = params.get("member");
+
+        const memberData = {
+            ingie: {
+                name: "Ingie 20",
+                image: "angie.jpeg",
+                bio: " Chief Officer of Omnipresence & Vibe Control Always around, always observing. Quietly chaotic and secretly a nerd."
+            },
+            aziza: {
+                name: "Aziza 20 ",
+                image: "aziza.jpeg",
+                bio: "Supreme Minister of Treasury & Emotional Support The glue that keeps this hot mess together. Handles feelings and finances with equal precision. If she cries, the entire club dissolves. "
+            },
+            khadija: {
+                name: "Khadija 19",
+                image: "khadija.jpeg",
+                bio: "Executive Director of Loud Opinions & Engine malfunctions sharp,loud,and loyal.Her voiceenters the chat before she does will argue for fun-and still win. "
+            },
+            haitham: {
+                name: "Haitham 20 ",
+                image: "haitham.jpeg",
+                bio: " Alpha Operations Overload swift mover,solid planner,silent fixer,Probably made this site and six plans you havent heard about yet.Does the most without saying much."
+            },
+            hamada: {
+                name: "Hamada 19 ",
+                image: "hamada.jpeg",
+                bio: " The Intern™️ Carrying the entire emotional admin workload Youngest but most burdened.Assigned to revive the group,one meme and voice note at a time. "
+            },
+            yasser: {
+                name: "Yasser 20 ",
+                image: "yasser.jpeg",
+                bio: " The Music Whisperer No one knows much—except that he knows everything about music. A walking Spotify algorithm. Quiet, mysterious, and probably judging your taste."
+            },
+            masry: {
+                name: "Masry 20 ",
+                image: "masry.jpeg",
+                bio: "Fashion Icon-in-Residence Elegant, stylish, untouchable. Her outfits speak louder than most people. Would probably survive the apocalypse in the most fashionable way."
+            },
+            antouka: {
+                name: "Antouka 20",
+                image: "antouka.jpeg",
+                bio: "TV Lore Keeper Your favorite series? She’s already seen it—twice. Speaks fluent Netflix. Can connect any real-life situation to a scene from a show."
+            },
+            joudy: {
+                name: "Joudy 20",
+                image: "joudy.jpeg",
+                bio: "Mystery Member Background energy strong. Majors in vanishing and reappearing with perfect timing."
+            },
+            aboelwafa: {
+                name: "Aboelwafa 20",
+                image: "aboelwafa.jpeg",
+                bio: " Director of Cinematic Disappearances Cinematic Studies major. Full diva status. Rarely seen, always iconic. When she shows up, it’s red carpet energy."
+            },
+            salama: {
+                name: "Salama 20 ",
+                image: "salama.jpeg",
+                bio: " Wazeer El Shabab Wel Reyada Part-time logistics specialist, full-time movement initiator. Rarely seen."
+            },
+            farah: {
+                name: "Farah 21 ",
+                image: "farah.jpeg",
+                bio: " Drama Scholar with a Study Schedule On the surface: chill. In the background: chaos. A secret bookworm with a tendency to attract plot twists."
+            }
+        };
+
+        if (memberData[member]) {
+            document.getElementById('memberName').textContent = memberData[member].name;
+            document.getElementById('memberPhoto').src = memberData[member].image;
+            document.getElementById('memberBio').textContent = memberData[member].bio;
+        } else {
+            document.getElementById('memberName').textContent = "Member Not Found";
+            document.getElementById('memberPhoto').style.display = "none";
+            document.getElementById('memberBio').textContent = "";
+        }
+    </script>
+</body>
+</html>
